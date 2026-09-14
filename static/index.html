@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MOF logQe Predictor</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">Adsorption modelling</p>
+      <h1>MOF logQe Predictor</h1>
+      <p class="subtitle">Enter the available material and experimental descriptors. Empty fields are handled by the model's median imputer.</p>
+    </header>
+
+    <section class="card">
+      <div class="toolbar">
+        <div>
+          <h2>Model inputs</h2>
+          <p id="feature-count">Loading model metadata…</p>
+        </div>
+        <button id="clear-button" class="secondary" type="button">Clear</button>
+      </div>
+
+      <form id="prediction-form">
+        <div id="feature-grid" class="feature-grid"></div>
+        <button id="predict-button" class="primary" type="submit">Predict logQe</button>
+      </form>
+    </section>
+
+    <section id="result-card" class="card result-card" hidden>
+      <p class="eyebrow">Prediction</p>
+      <div class="results">
+        <div>
+          <span>logQe</span>
+          <strong id="logqe-result">—</strong>
+        </div>
+        <div>
+          <span>Qe</span>
+          <strong id="qe-result">—</strong>
+        </div>
+      </div>
+      <p id="result-note" class="note"></p>
+    </section>
+
+    <p id="error-message" class="error" role="alert" hidden></p>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
